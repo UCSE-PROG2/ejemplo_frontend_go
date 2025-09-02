@@ -1,0 +1,8 @@
+# Configuración de la aplicación
+PORT=8080
+MONGODB_URI=mongodb://localhost:27017
+DATABASE_NAME=ejemplo
+JWT_SECRET=mi_clave_secreta_muy_segura
+
+# Para desarrollo
+GIN_MODE=debug
