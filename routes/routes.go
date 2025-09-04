@@ -8,27 +8,11 @@ import (
 )
 
 func SetupRoutes(r *gin.Engine) {
-	// Rutas públicas
-	r.GET("/", func(c *gin.Context) {
-		c.HTML(200, "index.html", gin.H{
-			"Title": "App",
-		})
-	})
-	r.GET("/login", func(c *gin.Context) {
-		c.HTML(200, "login.html", gin.H{
-			"Title": "Iniciar Sesión",
-		})
-	})
-	r.GET("/register", func(c *gin.Context) {
-		c.HTML(200, "register.html", gin.H{
-			"Title": "Registro",
-		})
-	})
-	r.GET("/products", func(c *gin.Context) {
-		c.HTML(200, "products.html", gin.H{
-			"Title": "Productos",
-		})
-	})
+	// Public HTML pages
+	r.GET("/", handlers.IndexPage)
+	r.GET("/login", handlers.LoginPage)
+	r.GET("/register", handlers.RegisterPage)
+	r.GET("/products", handlers.ProductsPage)
 
 	// API pública
 	api := r.Group("/api")
